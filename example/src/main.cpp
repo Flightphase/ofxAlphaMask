@@ -1,7 +1,7 @@
 /*
- *  ofxAlphaMask
+ *  ofxAlphaMaskShader.h
  *
- * Example by James George, http://www.jamesgeorge.org
+ * Created by James George, http://www.jamesgeorge.org
  * in collaboration with FlightPhase http://www.flightphase.com
  *
  * Permission is hereby granted, free of charge, to any person
@@ -27,7 +27,24 @@
  *
  * ----------------------
  *
- * ofxAlphaMask is not really an addon, but an example
+ * ofxAlphaMaskShader is not really an addon, but an example
  * of how to use a shader to have one image become the alpha
  * channel of another.
  */
+
+#include "ofMain.h"
+#include "testApp.h"
+#include "ofAppGlutWindow.h"
+
+//========================================================================
+int main( ){
+
+    ofAppGlutWindow window;
+	ofSetupOpenGL(&window, 143, 290, OF_WINDOW);			// <-------- setup the GL context
+
+	// this kicks off the running of my app
+	// can be OF_WINDOW or OF_FULLSCREEN
+	// pass in width and height too:
+	ofRunApp( new testApp());
+
+}

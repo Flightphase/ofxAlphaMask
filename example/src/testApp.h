@@ -1,7 +1,7 @@
 /*
- *  ofxAlphaMask
+ *  ofxAlphaMaskShader.h
  *
- * Example by James George, http://www.jamesgeorge.org
+ * Created by James George, http://www.jamesgeorge.org
  * in collaboration with FlightPhase http://www.flightphase.com
  *
  * Permission is hereby granted, free of charge, to any person
@@ -27,7 +27,35 @@
  *
  * ----------------------
  *
- * ofxAlphaMask is not really an addon, but an example
+ * ofxAlphaMaskShader is not really an addon, but an example
  * of how to use a shader to have one image become the alpha
  * channel of another.
  */
+
+#ifndef _TEST_APP
+#define _TEST_APP
+
+#include "ofMain.h"
+
+class testApp : public ofBaseApp{
+
+  public:
+	void setup();
+	void update();
+	void draw();
+
+	void keyPressed  (int key);
+	void keyReleased(int key);
+	void mouseMoved(int x, int y );
+	void mouseDragged(int x, int y, int button);
+	void mousePressed(int x, int y, int button);
+	void mouseReleased(int x, int y, int button);
+	void windowResized(int w, int h);
+
+	ofImage mask;
+	ofImage topLayer;
+	ofImage bottomLayer;
+	ofShader maskShader;
+};
+
+#endif

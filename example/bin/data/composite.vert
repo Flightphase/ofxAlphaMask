@@ -1,8 +1,8 @@
 /*
- *  ofxAlphaMask
+ *  ofxAlphaMaskShader.h
  *
- * Example by James George, http://www.jamesgeorge.org
- * in collaboration with FlightPhase http://www.flightphase.com
+ * Created by James George, http://www.jamesgeorge.org
+ * in collaboration with Flightphase http://www.flightphase.com
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -27,7 +27,15 @@
  *
  * ----------------------
  *
- * ofxAlphaMask is not really an addon, but an example
+ * ofxAlphaMaskShader is not really an addon, but an example
  * of how to use a shader to have one image become the alpha
  * channel of another.
  */
+void main(void)
+{
+	//this is a default vertex shader all it does is this...
+	gl_Position = ftransform();
+	//.. and passes the multi texture coordinates along to the fragment shader
+	gl_TexCoord[0] = gl_MultiTexCoord0;
+	gl_TexCoord[1] = gl_MultiTexCoord1;
+}
